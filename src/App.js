@@ -13,8 +13,8 @@ function App() {
   const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
-    getCharacters(1);
-  }, []);
+    getCharacters(currentPage);
+  }, [currentPage]);
 
   const getCharacters = async (pageNumber) => {
     // Utilised Axios for API calls
