@@ -1,11 +1,17 @@
 import Character from './Character';
 
-function CharacterContainer({ characters }) {
+function CharacterContainer({ characters, characterFavourites, updateFavourites }) {
 
     const buildRows = () => {
         let rows = [], cols = [];
         characters.forEach((character, index) => {
-            cols.push(<Character key={character._id} character={character} />);
+            cols.push(
+                <Character key={character._id}
+                    character={character}
+                    characterFavourites={characterFavourites}
+                    updateFavourites={updateFavourites}
+                />
+            );
             if ((index + 1) % 5 === 0) {
                 rows.push(
                     <div className="character-row" key={index}>

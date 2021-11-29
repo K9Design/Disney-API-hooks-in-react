@@ -11,6 +11,7 @@ function App() {
   // Some dummy state representing disney characters
   const [characters, setCharacters] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
+  const [characterFavourites, setCharacterFavourites] = useState([]);
 
   useEffect(() => {
     getCharacters(currentPage);
@@ -26,7 +27,9 @@ function App() {
     <div className="page">
       <Header currentPage={currentPage} />
       <Navigation currentPage={currentPage} setCurrentPage={setCurrentPage} />
-      <CharacterContainer characters={characters} />
+      <CharacterContainer characters={characters}
+        characterFavourites={characterFavourites}
+        updateFavourites={setCharacterFavourites} />
     </div>
   );
 }
