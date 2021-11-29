@@ -5,15 +5,14 @@ import Header from './components/Header';
 import CharacterContainer from './components/CharacterContainer';
 import Navigation from './components/Navigation';
 import axios from 'axios';
-
-export const FavouritesContext = React.createContext();
+import { FavouriteProvider } from './hooks/FavouriteContext';
 
 function App() {
 
   // Some dummy state representing disney characters
   const [characters, setCharacters] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [characterFavourites, setCharacterFavourites] = useState([]);
+
 
   useEffect(() => {
     getCharacters(currentPage);
@@ -26,14 +25,13 @@ function App() {
   };
 
   return (
-    <FavouritesContext.Provider value={characterFavourites}>
+    <FavouriteProvider>
       <div className="page">
         <Header currentPage={currentPage} />
         <Navigation currentPage={currentPage} setCurrentPage={setCurrentPage} />
-        <CharacterContainer characters={characters}
-          updateFavourites={setCharacterFavourites} />
+        <CharacterContainer characters={characters} />
       </div>
-    </FavouritesContext.Provider>
+    </FavouriteProvider>
   );
 }
 

@@ -1,6 +1,6 @@
 import Character from './Character';
 
-function CharacterContainer({ characters, updateFavourites }) {
+function CharacterContainer({ characters }) {
 
     const buildRows = () => {
         let rows = [], cols = [];
@@ -8,7 +8,7 @@ function CharacterContainer({ characters, updateFavourites }) {
             cols.push(
                 <Character key={character._id}
                     character={character}
-                    updateFavourites={updateFavourites}
+                //updateFavourites={updateFavourites}
                 />
             );
             if ((index + 1) % 5 === 0) {
