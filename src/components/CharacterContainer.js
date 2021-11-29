@@ -1,6 +1,6 @@
 import Character from './Character';
 
-function CharacterContainer({ characters, characterFavourites, updateFavourites }) {
+function CharacterContainer({ characters, updateFavourites }) {
 
     const buildRows = () => {
         let rows = [], cols = [];
@@ -8,7 +8,6 @@ function CharacterContainer({ characters, characterFavourites, updateFavourites 
             cols.push(
                 <Character key={character._id}
                     character={character}
-                    characterFavourites={characterFavourites}
                     updateFavourites={updateFavourites}
                 />
             );

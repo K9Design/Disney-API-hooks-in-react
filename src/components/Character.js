@@ -1,4 +1,9 @@
-function Character({ character, characterFavourites, updateFavourites }) {
+import React, { useContext } from 'react';
+import { FavouritesContext } from '../App';
+
+function Character({ character, updateFavourites }) {
+
+  const characterFavourites = useContext(FavouritesContext);
 
   // Define a default in case the character doesn't have an image
   let imageSrc = "https://picsum.photos/300/200/?blur";
