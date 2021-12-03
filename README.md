@@ -21,8 +21,8 @@ To install and run the project:
 - [install git](https://github.com/git-guides/install-git)
 
 ```bash
-git clone https://github.com/K9Design/api-mock-testing
-cd api-mock-testing
+git clone https://github.com/K9Design/Disney-API-hooks-in-react
+cd Disney-API-hooks-in-react
 npm install
 ```
 
