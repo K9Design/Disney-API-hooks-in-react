@@ -28,7 +28,7 @@ function App() {
 
   const getCharacters = async (pageNumber) => {
     // Utilised Axios for API calls
-    const apiResponse = await axios.get(`http://api.disneyapi.dev/characters?page=${pageNumber}`);
+    const apiResponse = await axios.get(`https://api.disneyapi.dev/characters?page=${pageNumber}`);
     setCharacters(apiResponse.data.data);
   };
 
